@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'reservas-canchas-front';
+  title = 'Reserva tu cancha';
 }
