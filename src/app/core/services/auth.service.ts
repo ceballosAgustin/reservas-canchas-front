@@ -44,6 +44,20 @@ export class AuthService {
     return token != null && !this.jwtHelper.isTokenExpired(token);
   }
 
+  getUserRole(): string[] {
+    const token = localStorage.getItem('authToken');
+    if(token) {
+      const decodedToken = this.jwtHelper.decodeToken(token);
+
+      // authorities del Claims en JwtAuthenticationFilter (back)
+      if(decodedToken && decodedToken.authorities) {
+        return decodedToken.authorities;
+      }
+    }
+
+    return [];
+  }
+
   logout(): void {
     localStorage.clear();
   }
