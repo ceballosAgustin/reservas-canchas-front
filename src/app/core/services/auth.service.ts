@@ -10,9 +10,7 @@ import Usuario from '../models/usuario';
 })
 export class AuthService {
 
-  private url: string = environment.url;
-  private prefix: string = environment.prefix;
-  private prefixAuth: string = environment.prefixAuth;
+  private url: string = environment.url + environment.prefixAuth;
   private loginUrl: string = environment.login;
   private registroUrl: string = environment.registro;
   private userData = new BehaviorSubject<string>('');
@@ -26,7 +24,7 @@ export class AuthService {
     const body = {email, clave};
 
     return this.http.post<{token: string, email: string, nombre: string}>
-    (this.url + this.prefixAuth + this.loginUrl, body, {headers})
+    (this.url + this.loginUrl, body, {headers})
     .pipe(map(response => {
       localStorage.setItem('authToken', response.token);
       localStorage.setItem('email', response.email);
@@ -38,7 +36,7 @@ export class AuthService {
   registro(usuario: {email: string, clave: string, nombre: string, apellido: string}): Observable<Usuario> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post<Usuario>(this.url + this.prefixAuth + this.registroUrl, usuario, {headers});
+    return this.http.post<Usuario>(this.url + this.registroUrl, usuario, {headers});
   }
 
   isAuthenticated(): boolean {
