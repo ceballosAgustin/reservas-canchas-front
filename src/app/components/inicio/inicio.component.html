@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="logo">Reserva tu cancha - ARG</div>
+  <button class="login-btn" (click)="goToLogin()">Iniciar Sesión</button>
+</nav>
+
+<header class="header">
+  <h1>Reserva tu cancha en segundos</h1>
+  <p>Encuentra y reserva fácilmente la mejor cancha para tu partido.</p>
+</header>
+
+<section class="canchas-container">
+  <div class="cancha-card" *ngFor="let cancha of canchas">
+    <h3>{{ cancha.nombre }}</h3>
+  </div>
+</section>
