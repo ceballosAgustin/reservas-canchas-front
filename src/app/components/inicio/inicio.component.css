@@ -17,7 +17,28 @@
   margin-right: 30px;
 }
 
-.nav-buttons .btn-auth {
+.nav-buttons .btn-log {
+  background: white;
+  color: #28a745;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 1.2em;
+  transition: background 0.3s;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins';
+}
+
+.nav-buttons .btn-log:hover {
+  background: #218838;
+  color: white;
+}
+
+.nav-buttons .btn-reg {
   background: #28a745;
   color: white;
   padding: 10px 15px;
@@ -33,7 +54,7 @@
   font-family: 'Poppins';
 }
 
-.nav-buttons .btn-auth:hover {
+.nav-buttons .btn-reg:hover {
   background: #218838;
 }
 
@@ -84,6 +105,7 @@
   font-size: 1.2em;
   border-radius: 5px;
   transition: background 0.3s;
+
 }
 
 .btn:hover {
