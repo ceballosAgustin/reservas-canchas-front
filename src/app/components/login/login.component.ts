@@ -22,7 +22,7 @@ export class LoginComponent {
     {
       this.loginForm = formBuilder.group({
         email: ['', [Validators.required, Validators.email]],
-        clave: ['', [Validators.required, Validators.minLength(4)]]
+        clave: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(256)]]
       });
     }
 
@@ -54,5 +54,9 @@ export class LoginComponent {
 
   goToRegistro(): void {
     this.router.navigate(['/register']);
+  }
+
+  goToInicio(): void {
+    this.router.navigate(['/inicio']);
   }
 }
