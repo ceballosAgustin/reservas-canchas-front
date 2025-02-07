@@ -52,4 +52,8 @@ export class RegisterComponent {
   goToLogin(): void {
     this.router.navigate(['/login']);
   }
+
+  goToInicio(): void {
+    this.router.navigate(['/inicio']);
+  }
 }
